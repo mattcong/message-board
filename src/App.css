@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Rubik&display=swap');
+
+* {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+display:none;
+}
+
+body {
+  --bg-color: #e2e3e4;
+  width: 600px;
+  margin: 0 auto;
+  background-color:var(--bg-color);
+  height: 100vh;
+  font-family: "inter", sans-serif;
+}
+
+.app {
+  border-left: 1px solid #c7c7c7;
+  border-right: 1px solid #c7c7c7;
+}
+
+a {
+  color: inherit
+}

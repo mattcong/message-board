@@ -1,0 +1,78 @@
+.signupPage, .signinPage {
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;    
+    margin: 12vh 0 auto 0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow:  8px 8px 16px #d9dadb,
+                -8px -8px 16px #ebeced;
+}
+
+.form input {
+    height: 40px;
+    width: 250px;
+    margin: 10px 0;
+    padding: 14px 10px;
+    background: #e2e3e4;
+    border: solid 1.5px #cccccc;
+    border-radius: 7px;
+    outline: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.form button {
+    background: #e2e3e4;
+    border: solid 1.5px #bdbdbd;
+    width: 250px;
+    margin: 10px 10px 10px 0;
+    padding: 7px 10px;
+    height: 40px;
+    color: #414141;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.form a {
+    color: #383838
+}
+
+.form a {
+    text-decoration: none;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
+
+.form p {
+    margin: 15px;
+}
+
+.loading {
+    font-size: 50px;
+    width: fit-content;
+    margin: 35px auto;
+    position: absolute;
+    color: grey;
+}
+
+.error {
+    color: red;
+    border-radius: 6px;
+    padding: 6px 12px;
+    width: fit-content;
+    margin: 35px auto;
+    position: absolute;
+    transform: translateY(-10px)
+  }

@@ -1,0 +1,80 @@
+.feed {
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+.addPost {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 20px;
+    border-bottom: 1px solid #c7c7c7;
+}
+
+.addPost form {
+    width: 90%;
+}
+
+.addPost__inputBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.addPost__inputBox--form {
+    height: 50px;
+    margin: 10px;
+    padding: 13px;
+    background: #e2e3e4;
+    border: solid 1.5px #cccccc;
+    border-radius: 7px;
+    resize: none;
+    outline: none;
+
+}
+
+.addPost__inputbox--imgURL {
+    background: #e2e3e4;
+    border: none;
+    margin: 10px 10px 10px 25px;
+    outline: none;
+}
+
+.addPost__inputBox--postButton {
+    margin: 10px;
+    height: fit-content;
+}
+
+.addPost__inputBox--postButton button {
+    background: #e2e3e4;
+    border: solid 1.5px #bdbdbd;
+    width: 60px;
+    height: 50px;
+    color: #414141;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: inherit;
+}
+/* 
+.addPost__inputBox--postButton:active {
+    box-shadow: inset 11px 11px 22px #bcbcbc,
+    inset -11px -11px 22px #fafafa;
+    border-radius: 10px;
+    padding: 10px 20px;
+} */
+
+.addPost__inputBox--attachmentButton {
+    margin: 5px 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background: #dbdbdb;
+    box-shadow:  8px 8px 16px #bfbfbf,
+    -8px -8px 16px #f7f7f7;
+}

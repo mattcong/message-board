@@ -1,0 +1,19 @@
+.navbarItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 55px;
+    height: 55px;
+    border-radius: 100px;
+    background: #e2e3e4;
+    box-shadow:  9px 9px 19px #c5c5c6,
+                -9px -9px 19px #ffffff;
+}
+
+.navbarItem:active {
+    border-radius: 100px;
+    background: #e2e3e4;
+    box-shadow: inset 9px 9px 19px #c5c5c6,
+                inset -9px -9px 19px #ffffff;
+}

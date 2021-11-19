@@ -1,0 +1,8 @@
+.userPage {
+    height: 100vh;
+    width: fit-content;
+    margin: 5vh auto;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    color: #444444
+}
