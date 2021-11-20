@@ -6,14 +6,14 @@
     width: 55px;
     height: 55px;
     border-radius: 100px;
-    background: #e2e3e4;
-    box-shadow:  9px 9px 19px #c5c5c6,
-                -9px -9px 19px #ffffff;
+    background: #f2f2f2;
+    box-shadow: 9px 9px 12px #d7d7d7,
+                -9px -9px 12px #ffffff;
 }
 
 .navbarItem:active {
     border-radius: 100px;
-    background: #e2e3e4;
-    box-shadow: inset 9px 9px 19px #c5c5c6,
-                inset -9px -9px 19px #ffffff;
+    background: var(--bg-color);
+    box-shadow: inset 9px 9px 23px #dfdfdf,
+                inset -9px -9px 23px #ffffff
 }

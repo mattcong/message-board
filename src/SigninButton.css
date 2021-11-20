@@ -7,9 +7,9 @@
 .signinButton button {
     width: 200px;
     height: 60px;
-    background-color: #e2e3e4;
-    border: solid 1.5px #bdbdbd;
-    color: #414141;
+    background-color: var(--bg-color);
+    border: solid 1.5px #c9c9c9;
+    color: #525252;
     font-family: "inter", sans-serif;
     font-size: 20px;
     text-align: center;

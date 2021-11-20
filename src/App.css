@@ -11,10 +11,10 @@ display:none;
 }
 
 body {
-  --bg-color: #e2e3e4;
+  --bg-color: #f2f2f2;
   width: 600px;
   margin: 0 auto;
-  background-color:var(--bg-color);
+  background-color: var(--bg-color);
   height: 100vh;
   font-family: "inter", sans-serif;
 }

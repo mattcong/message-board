@@ -3,8 +3,9 @@
     height: max-content;
     margin: 35px auto;
     background: #e2e3e4;
-    box-shadow: 8px 8px 16px #d9dadb,
-                -8px -8px 16px #ebeced;
+    background: var(--bg-color);
+    box-shadow: 5px 5px 10px #dfdfdf,
+                -5px -5px 10px #ffffff;
     border-radius: 10px;
     padding: 10px 20px
 }

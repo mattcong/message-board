@@ -27,7 +27,7 @@
     height: 50px;
     margin: 10px;
     padding: 13px;
-    background: #e2e3e4;
+    background: var(--bg-color);
     border: solid 1.5px #cccccc;
     border-radius: 7px;
     resize: none;
@@ -36,7 +36,7 @@
 }
 
 .addPost__inputbox--imgURL {
-    background: #e2e3e4;
+    background: var(--bg-color);
     border: none;
     margin: 10px 10px 10px 25px;
     outline: none;
@@ -48,7 +48,7 @@
 }
 
 .addPost__inputBox--postButton button {
-    background: #e2e3e4;
+    background: var(--bg-color);
     border: solid 1.5px #bdbdbd;
     width: 60px;
     height: 50px;
@@ -69,7 +69,7 @@ textarea {
     padding: 10px 20px;
 } */
 
-.addPost__inputBox--attachmentButton {
+/* .addPost__inputBox--attachmentButton {
     margin: 5px 10px;
     width: 40px;
     height: 40px;
@@ -77,4 +77,4 @@ textarea {
     background: #dbdbdb;
     box-shadow:  8px 8px 16px #bfbfbf,
     -8px -8px 16px #f7f7f7;
-}
+} */

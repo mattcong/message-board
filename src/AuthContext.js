@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
                 })
             })
             .then((res) => console.log(res))
-            .catch(() => setError("Error: Password should be at least 6 characters."))
+            .catch((err) => setError(err.message))
             .finally(() => setLoading(false));
     };
 
@@ -53,7 +53,7 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((res) => console.log(res))
-            .catch(() => setError("Error: User not found."))
+            .catch((err) => setError(err.message))
             .finally(() => setLoading(false));
     };
 

@@ -6,7 +6,7 @@
     padding: 0 0 0 10px;
     border-bottom: 1px solid #c7c7c7;
     color: #585858;
-    background-color: #e2e3e4;
+    background-color: var(--bg-color);
     display: grid;
     grid-template-columns: 2fr 2fr 4fr 1fr 2.7fr;
     justify-items: center;
@@ -16,7 +16,7 @@
 .signinoutButton {
     padding: 15px 10px;
     width: fit-content;
-    background-color: #e2e3e4;
+    background-color: var(--bg-color);
     border: solid 1.5px #bdbdbd;
     color: #414141;
     font-family: inherit;
@@ -27,7 +27,7 @@
 }
 
 .currentUser {
-    background-color: #464646;
+    background-color: #494949;
     height: 50px;
     width: 50px;
     border-radius: 50px;

@@ -12,8 +12,8 @@
     margin: 12vh 0 auto 0;
     padding: 30px;
     border-radius: 15px;
-    box-shadow:  8px 8px 16px #d9dadb,
-                -8px -8px 16px #ebeced;
+    box-shadow: 5px 5px 10px #dfdfdf,
+                -5px -5px 10px #ffffff;
 }
 
 .form input {
@@ -21,7 +21,7 @@
     width: 250px;
     margin: 10px 0;
     padding: 14px 10px;
-    background: #e2e3e4;
+    background: var(--bg-color);
     border: solid 1.5px #cccccc;
     border-radius: 7px;
     outline: none;
@@ -30,7 +30,7 @@
 }
 
 .form button {
-    background: #e2e3e4;
+    background: var(--bg-color);
     border: solid 1.5px #bdbdbd;
     width: 250px;
     margin: 10px 10px 10px 0;
