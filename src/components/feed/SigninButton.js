@@ -1,5 +1,5 @@
-import React from 'react'
-import './SigninButton.css'
+import React from 'react';
+import './SigninButton.css';
 
 
 function SigninButton() {

@@ -1,11 +1,11 @@
 import './App.css';
-import SigninPage from './SigninPage';
-import SignupPage from './SignupPage';
-import Nav from './Nav.js';
-import Feed from './Feed.js';
-import UserPage from './UserPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import AuthProvider from './AuthContext';
+import SigninPage from './components/signin/SigninPage';
+import SignupPage from './components/signin/SignupPage';
+import Nav from './components/nav/Nav.js';
+import Feed from './components/feed/Feed.js';
+import UserPage from './components/profile/UserPage';
+import AuthProvider from './context/auth';
 
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
         </div>
       </Router>
     </AuthProvider>
-  );
+  )
 }
 
-export default App;
+export default App

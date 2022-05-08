@@ -11,6 +11,7 @@
     justify-content: space-between;
     padding: 20px 20px 20px 20px;
     border-bottom: 1px solid #c7c7c7;
+    user-select: none;
 }
 
 .addPost form {
@@ -32,7 +33,6 @@
     border-radius: 7px;
     resize: none;
     outline: none;
-
 }
 
 .addPost__inputbox--imgURL {
@@ -61,20 +61,3 @@ textarea {
     font-family: 'Inter', sans-serif;
     font-size: inherit;
 }
-/* 
-.addPost__inputBox--postButton:active {
-    box-shadow: inset 11px 11px 22px #bcbcbc,
-    inset -11px -11px 22px #fafafa;
-    border-radius: 10px;
-    padding: 10px 20px;
-} */
-
-/* .addPost__inputBox--attachmentButton {
-    margin: 5px 10px;
-    width: 40px;
-    height: 40px;
-    border-radius: 100px;
-    background: #dbdbdb;
-    box-shadow:  8px 8px 16px #bfbfbf,
-    -8px -8px 16px #f7f7f7;
-} */

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, createContext, useContext } from "react";
-import { auth } from './firebase-config';
+import { auth } from '../config/firebase';
 import {
     createUserWithEmailAndPassword,
     updateProfile,
@@ -10,33 +10,28 @@ import {
     signOut
 } from "firebase/auth";
 
-//create context object
-const AuthContext = createContext({});
+const AuthContext = createContext({})
 
 const AuthProvider = ({ children }) => {
 
-    //functions to handle data changes
-
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState("");
-    const [error, setError] = useState("");
+    const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState("")
+    const [error, setError] = useState("")
 
     useEffect(() => {
 
-        //listener to detect authenticated user
         const unsub = onAuthStateChanged(auth, (user) => {
-            setLoading(true);
-            if (user) setUser(user);
-            else setUser(null);
-            setError("");
-            setLoading(false);
-        });
+            setLoading(true)
+            if (user) setUser(user)
+            else setUser(null)
+            setError("")
+            setLoading(false)
+        })
         return unsub
-    }, []);
+    }, [])
 
-    //register user with email
     const registerUser = (username, email, password) => {
-        setLoading(true);
+        setLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then(() => {
                 return updateProfile(auth.currentUser, {
@@ -45,33 +40,29 @@ const AuthProvider = ({ children }) => {
             })
             .then((res) => console.log(res))
             .catch((err) => setError(err.message))
-            .finally(() => setLoading(false));
-    };
+            .finally(() => setLoading(false))
+    }
 
-    //sign in with email
     const signInWithEmail = (email, password) => {
         setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((res) => console.log(res))
             .catch((err) => setError(err.message))
-            .finally(() => setLoading(false));
-    };
+            .finally(() => setLoading(false))
+    }
 
-    //sign in with google 
     const signInWithGoogle = () => {
-        setLoading(true);
+        setLoading(true)
         signInWithPopup(auth, new GoogleAuthProvider())
             .then((res) => console.log(res))
             .catch((err) => setError(err.message))
-            .finally(() => setLoading(false));
+            .finally(() => setLoading(false))
     }
 
-    //sign out user
     const signOutUser = () => {
         signOut(auth)
-    };
+    }
 
-    //store data in context
     const contextValue = {
         user,
         loading,
@@ -80,15 +71,13 @@ const AuthProvider = ({ children }) => {
         signInWithEmail,
         signInWithGoogle,
         signOutUser,
-    };
+    }
 
-    // render data changes in context
     return (
         <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
-    );
-};
+    )
+}
 
-//custom hook to access context
-export const useAuthContext = () => useContext(AuthContext);
+export const useAuthContext = () => useContext(AuthContext)
 
-export default AuthProvider;
+export default AuthProvider

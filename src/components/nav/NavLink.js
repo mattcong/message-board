@@ -1,8 +1,8 @@
 import React from 'react';
-import './NavItem.css';
+import './NavLink.css';
 
 
-function NavItem({ Icon, text }) {
+function NavLink({ Icon, text }) {
     return (
         <div className="navbarItem">
             {Icon}
@@ -11,4 +11,4 @@ function NavItem({ Icon, text }) {
     )
 }
 
-export default NavItem
+export default NavLink

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Feed.css';
 import SendIcon from '@mui/icons-material/Send';
 import Post from './Post';
-import { db } from './firebase-config';
+import SigninButton from './SigninButton';
+import { db } from '../../config/firebase';
 import {
     collection,
     addDoc,
@@ -11,72 +13,56 @@ import {
     orderBy,
     query
 } from 'firebase/firestore';
-import { useAuthContext } from './AuthContext';
-import SigninButton from './SigninButton';
-import { Link } from 'react-router-dom';
+import { useAuthContext } from '../../context/auth';
 
 
 function Feed() {
 
-    //context data
-    const { user } = useAuthContext();
+    const { user } = useAuthContext()
 
-    //form state
-    const [newPostText, setNewPostText] = useState("");
-    const [newPostImage, setNewPostImage] = useState("");
-    //posts data state
-    const [posts, setPosts] = useState([]);
+    const [newPostText, setNewPostText] = useState("")
+    const [newPostImage, setNewPostImage] = useState("")
+    const [posts, setPosts] = useState([])
 
-    //collection (posts) reference variable 
-    const dataRef = collection(db, "posts");
+    const dataRef = collection(db, "posts")
 
-    //fetch docs (post data) from firestore
     useEffect(() => {
-        //order posts collection by timestamp
-        const q = query(dataRef, orderBy("createdAt", "desc"));
-        //render posts
-        const unsub = onSnapshot(q, (snapshot) =>
-            setPosts(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))));
-        return unsub;
-    }, []);
+        const q = query(dataRef, orderBy("createdAt", "desc"))
 
-    //add new post to collection
+        const unsub = onSnapshot(q, (snapshot) =>
+            setPosts(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))))
+        return unsub
+    }, [])
+
     const addPost = async (e) => {
-        // stop default refresh on submit
-        e.preventDefault();
-        //add post state to db
+        e.preventDefault()
         await addDoc(dataRef, {
             username: user.displayName,
             text: newPostText,
             image: newPostImage,
             createdAt: serverTimestamp(),
-        });
-        //reset form to empty state
-        setNewPostText("");
-        setNewPostImage("");
-    };
+        })
+        setNewPostText("")
+        setNewPostImage("")
+    }
 
     return (
         <div className="feed">
 
-
             {/* input box */}
 
             {user ?
-                //if user is signed in show input box
                 <div className="addPost">
                     <form onSubmit={addPost} >
                         <div className="addPost__inputBox">
                             <textarea className="addPost__inputBox--form"
                                 placeholder="Say Something..."
                                 type="text"
-                                // update new post text state with input content
                                 value={newPostText}
                                 onChange={(e) => { setNewPostText(e.target.value) }} />
                             <input className="addPost__inputbox--imgURL"
                                 placeholder="Enter Image URL"
                                 type="text"
-                                // update new post image state with input content
                                 value={newPostImage}
                                 onChange={(e) => { setNewPostImage(e.target.value) }} />
                         </div>
@@ -85,9 +71,7 @@ function Feed() {
                         <button type="submit" disabled={!newPostText} onClick={addPost}><SendIcon /></button>
                     </div>
                 </div>
-                //if user is not signed in show sign in button 
                 : <Link to="/"><SigninButton /></Link>}
-
 
             {/* posts */}
 
@@ -98,12 +82,11 @@ function Feed() {
                         username={post.username}
                         text={post.text}
                         image={post.image}
-                        timestamp={post.createdAt
-                            //wait for timestamp data then call toDate method
-                            && post.createdAt.toDate().toLocaleString()}
+                        timestamp={post.createdAt && post.createdAt.toDate().toLocaleString()}
                     />
                 )
             })}
+
         </div >
     )
 }

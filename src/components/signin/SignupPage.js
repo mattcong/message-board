@@ -1,54 +1,49 @@
 import React, { useState, useRef } from 'react';
-import { useAuthContext } from './AuthContext';
 import { Link } from 'react-router-dom';
 import './Forms.css';
 import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty';
+import { useAuthContext } from '../../context/auth';
 
 
 function SignupPage() {
 
-    //context data
-    const { registerUser, signInWithGoogle, loading, error } = useAuthContext();
+    const { registerUser, signInWithGoogle, loading, error } = useAuthContext()
 
-    //form state
-    const [usernameInputText, setUsernameInputText] = useState("");
-    const [emailInputText, setEmailInputText] = useState("");
-    const [passwordInputText, setPasswordInputText] = useState("");
+    const [usernameInputText, setUsernameInputText] = useState("")
+    const [emailInputText, setEmailInputText] = useState("")
+    const [passwordInputText, setPasswordInputText] = useState("")
 
-    const usernameRef = useRef();
+    const usernameRef = useRef()
     const emailRef = useRef();
-    const passwordRef = useRef();
+    const passwordRef = useRef()
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // if all fields are present call register function
+
         const username = usernameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        if (username && email && password) registerUser(username, email, password);
-        // reset form
-        setUsernameInputText("");
-        setEmailInputText("");
-        setPasswordInputText("");
+        if (username && email && password) registerUser(username, email, password)
+
+        setUsernameInputText("")
+        setEmailInputText("")
+        setPasswordInputText("")
     };
 
     return (
         <div className="signupPage">
 
-            {//display error message
-                error && <p className="error">{error}</p>}
+            {error && <p className="error">{error}</p>}
 
             <div className="form">
 
-                {//display loading icon
-                    loading && <p className="loading"><HourglassEmptyIcon /></p>}
+                {loading && <p className="loading"><HourglassEmptyIcon /></p>}
 
                 <form onSubmit={handleSubmit}>
                     <div>
                         <input placeholder="username"
                             type="username"
                             ref={usernameRef}
-                            //reset input text to empty string
                             value={usernameInputText}
                             onChange={(e) => setUsernameInputText(e.target.value)}
                         />
